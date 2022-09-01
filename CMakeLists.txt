@@ -18,7 +18,9 @@ set(CMAKE_CUDA_COMPILER  /usr/local/cuda-11.7/bin/nvcc)
 # 使用nvcc单独编译cu文件
 set(CUDA_SEPARABLE_COMPILATION ON)
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+include(config)
+
 include_directories("include")
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/cuda)
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/native)
+add_subdirectory(src)
 

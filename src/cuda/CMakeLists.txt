@@ -6,6 +6,8 @@ file(GLOB REDUCE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/reduce.cu)
 file(GLOB WARP_SRC ${CMAKE_CURRENT_SOURCE_DIR}/warp_primitives.cu)
 file(GLOB STREAM_SRC ${CMAKE_CURRENT_SOURCE_DIR}/cuda_stream.cu)
 
+file(GLOB GEMM_SRC ${CMAKE_CURRENT_SOURCE_DIR}/gemm.cu)
+
 #list(APPEND MATMUL_SRC utils.cu)
 #list(APPEND MEM_SRC utils.cu)
 #list(APPEND VEC_ADD_SRC utils.cu)
@@ -40,3 +42,6 @@ set_property(TARGET warp PROPERTY CUDA_ARCHITECTURES 70-real 70-virtual)
 
 add_executable(stream ${STREAM_SRC})
 set_property(TARGET stream PROPERTY CUDA_ARCHITECTURES 70-real 70-virtual)
+
+add_executable(gemm ${GEMM_SRC})
+set_property(TARGET gemm PROPERTY CUDA_ARCHITECTURES 70-real 70-virtual)
